@@ -32,12 +32,12 @@ function App() {
     // console.log(active, over)
   }
 
-
   return (
-    <div className='border flex-wrap bottom-2 w-[900px] h-[500px] p-4 flex flex-row gap-2'>
+    <div className='border bottom-2 w-[900px] h-[500px] p-4 gap-2' id='container'>
       <DndContext sensors={sensors} onDragStart={handleDragStart}
         onDragEnd={handleDragEnd}>
         <SortableContext strategy={rectSortingStrategy} items={charts.map(chart => chart.order)} collisionDetection={closestCenter}>
+
           {itemsArray.map(item => {
             return <ItemWrapper key={item.title} item={item} />
           })}

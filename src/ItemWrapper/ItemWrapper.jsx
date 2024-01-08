@@ -1,23 +1,15 @@
 /* eslint-disable react/prop-types */
 import { useSortable } from '@dnd-kit/sortable';
-import React from 'react'
 
 const widthMapper = {
-  '25': '1/4',
-  '33': '1/3',
-  '50': '1/2',
-  '100': 'full'
-}
-
-const widthMapper2= {
-  '25': '1',
-  '33': '2',
-  '50': '3',
-  '100': '4'
+  '25': '3',
+  '33': '4',
+  '50': '6',
+  '100': '12'
 }
 
 const ItemWrapper = ({ item }) => {
-  const { attributes, listeners, setNodeRef, transform, transition, isDragging, isOver } = useSortable({
+  const { attributes, listeners, setNodeRef } = useSortable({
     id: item.order
   });
 
@@ -28,15 +20,15 @@ const ItemWrapper = ({ item }) => {
     ...listeners
   }
 
-
   return <div
     key={item.title}
+    id='item'
     style={{
-      // width: `${item.width}%`
-      flexGrow: `${widthMapper2[item.width]}%`
+      gridColumn: `span ${widthMapper[item.width]}`
     }}
     className={
-      `w-${widthMapper[item.width]}
+      `
+      w-full
       h-12 border border-1
       ${item.card ? 'border-blue-600' : 'border-orange-500'}`
     } {...draggableAttributes}>{item.title}

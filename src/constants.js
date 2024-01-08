@@ -1,16 +1,16 @@
 export const charts = [{
   order: 7,
   title: 'chart7',
-  width: '33'
+  width: '100'
 }, {
   order: 8,
   title: 'chart8',
-  width: '33'
+  width: '50'
 },
 {
   order: 9,
   title: 'chart9',
-  width: '33'
+  width: '50'
 },
 {
   order: 10,
