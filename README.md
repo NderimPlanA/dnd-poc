@@ -1,8 +1,13 @@
-# React + Vite
+# DnD Poc
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- each card should have a `width` prop
+- cards can have 3 different widths: 25, 33, 50 percent
+- cards will fill a whole row when possible (eg 3 33% cards will fill 1 row)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## what we need to do in the real codebase
+- FE:
+  - merge and sort charts and cards based on the order prop before feeding to the DNDContext
+- BE: 
+  - migrate the order prop to be consecutive between cards and chars
+  - no need to order charts and cards in the BE based on the order prop (if it is being done already)
